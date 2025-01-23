@@ -139,7 +139,7 @@ CSL.Output.Formats.prototype.html = {
     "@DOI/true": function (state, str) {
         var doiurl = str;
         if (!str.match(/^https?:\/\//)) {
-            doiurl = "https://doi.org/" + str;
+            doiurl = "https://doi.org/" + CSL.Util.encodeDoiForUrl(str);
         }
         return "<a href=\"" + doiurl + "\">" + str + "</a>";
     }
@@ -442,7 +442,7 @@ CSL.Output.Formats.prototype.asciidoc = {
     "@DOI/true": function (state, str) {
         var doiurl = str;
         if (!str.match(/^https?:\/\//)) {
-            doiurl = "https://doi.org/" + str;
+            doiurl = "https://doi.org/" + CSL.Util.encodeDoiForUrl(str);
         }
         return doiurl + "[" + str + "]";
     }

@@ -56,3 +56,7 @@ CSL.Util.Match = function () {
     };
 
 };
+
+CSL.Util.encodeDoiForUrl = function (doi) {
+    return doi.replace(/[\u0000-\u0020"#%<>?[\\\]^`{|}\u007F-\u009F]/g, encodeURIComponent);
+};
